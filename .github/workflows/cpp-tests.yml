@@ -24,4 +24,5 @@ jobs:
     #  run: bash run.sh
 
     - name: Run tests
-      run: ctest --verbose --test-dir build
+      working-directory: build
+      run: ctest --verbose
