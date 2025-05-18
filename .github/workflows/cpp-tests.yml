@@ -14,8 +14,13 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up CMake
-      uses: jwlawson/actions-setup-cmake@v1
+    - name: Set up cache for CMake FetchContent
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache
+        key: cmake-cache-${{ runner.os }}-${{ hashFiles('**/CMakeLists.txt') }}
+        restore-keys: |
+          cmake-cache-${{ runner.os }}-
 
     - name: Install dependencies
       run: sudo apt-get update && sudo apt-get install -y cmake g++
