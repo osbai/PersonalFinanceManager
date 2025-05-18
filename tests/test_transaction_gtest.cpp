@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include "../src/Transaction.h"
 
-TEST(TransactionTest, Creation) {
+TEST(TransactionTest, CreationAndGetters) {
     Transaction t("TXN001", "2025-05-17", "Food", "Lunch", -12.5);
 
     EXPECT_EQ(t.getId(), "TXN001");

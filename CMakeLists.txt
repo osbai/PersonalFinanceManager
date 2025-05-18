@@ -36,7 +36,9 @@ enable_testing()
 
 add_executable(TestsGtest
     tests/test_transaction_gtest.cpp
+    tests/test_account_gtest.cpp
     src/Transaction.cpp
+    src/Account.cpp
 )
 
 target_include_directories(TestsGtest PRIVATE ${PROJECT_SOURCE_DIR}/src)

@@ -1,3 +1,6 @@
+#ifndef TRANSACTION_H  // Check if ACCOUNT_H is NOT defined
+#define TRANSACTION_H  // If not, define it (i.e., mark the file as included)
+
 #include <string>
 #include <iostream>
 #include <iomanip>
@@ -31,3 +34,5 @@ public:
     // Utility
     void print() const;
 };
+
+#endif // TRANSACTION_H
