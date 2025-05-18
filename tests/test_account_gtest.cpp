@@ -37,3 +37,16 @@ TEST(AccountTest, AddTransaction) {
     // so test via balance updates if logic is extended to do so later
     EXPECT_DOUBLE_EQ(acc.getBalance(), 0.0); // Assuming balance is only affected by deposit/withdraw
 }
+
+TEST(AccountTest, GetTransactions) {
+    Account acc("Main");
+    Transaction t1("T001", "2025-05-17", "Food", "Dinner", -25.0);
+    Transaction t2("T002", "2025-05-18", "Groceries", "Groceries", -50.0);
+    acc.addTransaction(t1);
+    acc.addTransaction(t2);
+    
+    std::vector<Transaction> transactions = acc.getTransactions();
+    EXPECT_EQ(transactions.size(), 2);
+    EXPECT_EQ(transactions[0].getId(), "T001");
+    EXPECT_EQ(transactions[1].getId(), "T002");
+}
