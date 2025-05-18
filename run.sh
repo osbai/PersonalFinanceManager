@@ -1,4 +1,3 @@
-mkdir -p build && cd build
-cmake ..
-make
-./Tests
+cmake -S . -B build
+cmake --build build
+./build/Tests
