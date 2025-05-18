@@ -23,10 +23,10 @@ jobs:
           cmake-cache-${{ runner.os }}-
 
     - name: Install dependencies
-      run: sudo apt-get update && sudo apt-get install -y cmake g++
+      run: sudo apt-get update && sudo apt-get install -y cmake g++ lcov
 
-    - name: Configure CMake
-      run: cmake -S . -B build
+    - name: Configure CMake with coverage
+      run: cmake -S . -B build -DCODE_COVERAGE=ON -DCMAKE_BUILD_TYPE=Debug
 
     - name: Build Project
       run: cmake --build build
