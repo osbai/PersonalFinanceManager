@@ -1,4 +1,4 @@
 cmake -S . -B build
 cmake --build build
-#./build/TestsGtest
+ctest --verbose --test-dir build
 ./build/FinanceApp
