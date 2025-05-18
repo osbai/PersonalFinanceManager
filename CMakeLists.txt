@@ -18,6 +18,10 @@ add_executable(FinanceApp
 
 include(FetchContent)
 
+# Set policy CMP0135 to NEW (ensures timestamp is always considered)
+cmake_policy(SET CMP0135 NEW)
+
+
 # Download GoogleTest
 FetchContent_Declare(
   googletest
