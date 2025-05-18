@@ -3,7 +3,8 @@ option(CODE_COVERAGE "Enable coverage reporting" OFF)
 
 if(CODE_COVERAGE AND CMAKE_CXX_COMPILER_ID MATCHES "GNU|Clang")
     message(STATUS "Code coverage enabled")
-    add_compile_options(--coverage)
+    add_compile_options(-g -O0 --coverage)
+    add_link_options(--coverage)
     link_libraries(gcov)
 endif()
 
