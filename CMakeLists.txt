@@ -13,16 +13,10 @@ project(PersonalFinanceManager)
 
 set(CMAKE_CXX_STANDARD 17)
 
-#add_executable(Tests
-#    tests/test_transaction.cpp
-#    src/Transaction.cpp
-#)
-
 add_executable(FinanceApp
     src/main.cpp
     src/Transaction.cpp
 )
-
 
 ## Include Gtest
 
@@ -47,7 +41,10 @@ enable_testing()
 add_executable(TestsGtest
     tests/test_transaction_gtest.cpp
     tests/test_account_gtest.cpp
+    tests/test_all_gtest.cpp
     src/Transaction.cpp
+    src/Category.cpp
+    src/Budget.cpp
     src/Account.cpp
 )
 
